@@ -16,11 +16,12 @@ else:
     year = dt.year
 
 if not os.path.exists(f'day{day}'):
-    os.mkdir(os.path.join(os.getcwd(), f'day{day}'))
-    f = open(os.path.join(os.getcwd(), f'day{day}', 'puzzle1.py'), 'w')
+    day_str = f'day{day}' if day >= 10 else f'day0{day}'
+    os.mkdir(os.path.join(os.getcwd(), day_str))
+    f = open(os.path.join(os.getcwd(), day_str, 'puzzle1.py'), 'w')
     f.write('input = [l.strip() for l in open(\'input.txt\')]')
     f.close()
-    f = open(os.path.join(os.getcwd(), f'day{day}', 'puzzle2.py'), 'w')
+    f = open(os.path.join(os.getcwd(), day_str, 'puzzle2.py'), 'w')
     f.write('input = [l.strip() for l in open(\'input.txt\')]')
     f.close()
 
